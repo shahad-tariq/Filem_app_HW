@@ -33,7 +33,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         BottomSheetBehavior.from(binding.layoutRecycler).apply {
-            peekHeight = 1100
+            peekHeight = 1000
             this.state = BottomSheetBehavior.STATE_COLLAPSED
         }
 
