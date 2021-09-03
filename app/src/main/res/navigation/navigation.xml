@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.filem_app_hw.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_soonFragment"
+            app:destination="@id/soonFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="MovieId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.filem_app_hw.fragment.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="MovieId"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/soonFragment"
+        android:name="com.example.filem_app_hw.fragment.SoonFragment"
+        android:label="fragment_soon"
+        tools:layout="@layout/fragment_soon" >
+        <action
+            android:id="@+id/action_soonFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="MovieId"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.filem_app_hw.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="MovieId"
+            app:argType="integer"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.filem_app_hw.fragment.DetailsFragment"
+        android:label="DetailsFragment" />
+    <argument
+        android:name="MovieId"
+        app:argType="integer"/>
+</navigation>
