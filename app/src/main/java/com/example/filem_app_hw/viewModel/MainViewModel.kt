@@ -103,7 +103,7 @@ class MainViewModel : ViewModel() {
             addToList(Categories("Population Movies"))
             addToList(NestedDataObjectWrapper(popularMovies.value?.toData()?.results, VIEW_TYPE_BIG_CARD))
             addToList(Categories("More Movies"))
-            addToList(NestedDataObjectWrapperVertical(tvAirMovies.value?.toData()?.results, VIEW_TYPE_VERY_SMALL_CARD))
+            addToList(NestedDataObjectWrapperVertical(discoverMovies.value?.toData()?.results, VIEW_TYPE_VERY_SMALL_CARD))
         }
 
         adapterMain.setData(dataList = listAdapter)
@@ -119,7 +119,7 @@ class MainViewModel : ViewModel() {
     fun addToAdapterTv(listAdapter: MutableList<HasType>) {
             listAdapter.apply {
                 addToList(Categories("Tv Movies"))
-                addToList(NestedDataObjectWrapperVertical(tvAirMovies.value?.toData()?.results, VIEW_TYPE_SMALL_CARD))
+                addToList(NestedDataObjectWrapperVertical(tvAirMovies.value?.toData()?.results, VIEW_TYPE_VERY_SMALL_CARD))
             }
             adapterTv.setData(dataList = listAdapter)
     }
@@ -137,6 +137,7 @@ class MainViewModel : ViewModel() {
 
     fun addToAdapterSimilarMovies(listAdapter: MutableList<HasType>) {
         listAdapter.apply {
+            addToList(Categories("Similar Movies"))
             addToList(NestedDataObjectWrapper(similarMovies.value?.toData()?.results, VIEW_TYPE_BIG_CARD))
         }
         adapterSimilarMovies.setData(dataList = listAdapter)
